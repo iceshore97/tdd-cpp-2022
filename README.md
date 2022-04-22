@@ -1,2 +1,2 @@
-# tdd-cpp-2022
-Repo for Test-driven development course in C++
+# setup
+Simple setup for GTest and GMock project using cmake files
