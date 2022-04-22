@@ -6,17 +6,32 @@ class XXTest: public testing::Test {
 
 protected:
 
-	virtual void SetUp() {
+    void SetUp() override {
 	}
 
     Team3Xx x;
 };
 
-TEST_F (XXTest, TestXXName){
-	ASSERT_EQ("Team-3 XX", x.getXx());
+TEST_F (XXTest, TestEmptyString){
+    ASSERT_EQ(0, x.calculate(""));
 }
 
-TEST(XxNoFixture, TestGetXX) {
-    Team3Xx x{};
-    ASSERT_EQ("Team-3 XX", x.getXx());
+TEST_F (XXTest, TestTwoNumberSum){
+    ASSERT_EQ(3, x.calculate("1+2"));
 }
+
+//TEST_F (XXTest, TestTwoNumberSumWithSpacesInFront){
+//    ASSERT_EQ(3, x.calculate(" 1+2"));
+//    ASSERT_EQ(3, x.calculate("  1+2"));
+//}
+
+//TEST_F (XXTest, TestTwoNumberSumWithSpacesInBack){
+//    ASSERT_EQ(3, x.calculate("1+2 "));
+//    ASSERT_EQ(3, x.calculate("1+2  "));
+//}
+
+//TEST_F (XXTest, TestTwoNumberSumWithSpacesInBetween){
+//    ASSERT_EQ(3, x.calculate("1 +2"));
+//    ASSERT_EQ(3, x.calculate("1+ 2"));
+//    ASSERT_EQ(3, x.calculate("1 + 2"));
+//}

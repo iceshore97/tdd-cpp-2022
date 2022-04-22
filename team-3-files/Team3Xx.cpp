@@ -2,10 +2,19 @@
 #include "Team3Xx.h"
 
 
+
 Team3Xx::Team3Xx()
 {}
 
 
-const std::string Team3Xx::getXx() const {
-    return "Team-3 XX";
+int Team3Xx::calculate(const std::string& expr) const {
+    if(expr.empty()) return 0;
+
+    auto op_pos = expr.find('+');
+    auto sub_left = expr.substr(0, op_pos);
+    auto sub_right = expr.substr(op_pos + 1);
+    auto left_nr = std::stoi(sub_left);
+    auto right_nr = std::stoi(sub_right);
+
+    return left_nr + right_nr;
 }
