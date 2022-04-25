@@ -20,6 +20,16 @@ TEST_F (XXTest, TestTwoNumberSum){
     ASSERT_EQ(3, x.calculate("1+2"));
 }
 
+TEST_F (XXTest, TestOneNumber){
+    ASSERT_EQ(30, x.calculate("30"));
+}
+
+TEST_F (XXTest, TestTwoNumberMultiplication){
+    ASSERT_EQ(6, x.calculate("3*2"));
+}
+
+
+
 //TEST_F (XXTest, TestTwoNumberSumWithSpacesInFront){
 //    ASSERT_EQ(3, x.calculate(" 1+2"));
 //    ASSERT_EQ(3, x.calculate("  1+2"));
